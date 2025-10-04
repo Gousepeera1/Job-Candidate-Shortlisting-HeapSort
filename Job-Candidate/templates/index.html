@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Job Candidate Shortlisting — Heap Sort Visualizer</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+  <header>
+    <h1>🔥 Job Candidate Shortlisting (Heap Sort)</h1>
+    <p class="subtitle">Visual heap-building + extraction. Impressive UI for hackathons 👨‍💻🚀</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div class="control-row">
+        <label>Number of candidates</label>
+        <input id="numInput" type="number" value="12" min="6" max="50" />
+        <button id="genBtn" class="btn primary">Generate Candidates</button>
+      </div>
+
+      <div class="control-row">
+        <label>Shortlist size (K)</label>
+        <input id="kInput" type="number" value="5" min="1" max="20" />
+        <button id="startBtn" class="btn accent">Start Heap Sort & Shortlist</button>
+        <button id="autoBtn" class="btn">Auto Run</button>
+        <button id="resetBtn" class="btn">Reset</button>
+      </div>
+
+      <div class="control-row small">
+        <label>Speed (ms)</label>
+        <input id="speed" type="range" min="100" max="1200" step="50" value="500" />
+        <span id="speedVal">500ms</span>
+      </div>
+    </section>
+
+    <section class="visual-wrap">
+      <div class="heap-area">
+        <h2>Heap View (array indexed)</h2>
+        <div id="heapContainer" class="heap"></div>
+        <div class="legend"><span class="chip">Yellow</span> = Heap node | <span class="chip green">Green</span> = Extracted (shortlisted)</div>
+      </div>
+
+      <div class="panel right">
+        <h2>Candidate List</h2>
+        <div id="listContainer" class="list"></div>
+
+        <h2>Shortlisted (Top K)</h2>
+        <div id="shortlist" class="shortlist"></div>
+
+        <h2>System Log</h2>
+        <pre id="log" class="log"></pre>
+      </div>
+    </section>
+
+    <footer>
+      <p>Built with Python (Flask) + JS. Uses heap operations (sift-down and extract) for shortlisting.</p>
+    </footer>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
